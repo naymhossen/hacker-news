@@ -6,13 +6,17 @@ import Header from "./components/Header/Header";
 // import Blog from "./components/Blog/Blog";
 
 function App() {
-
   const [bookmarks, setBokmarks] = useState([]);
+  const [readTime, setReadTime] = useState(0);
 
-  const hamdaleAddBookmarks = impoBlog => {
-  const newBookmarks = [...bookmarks, impoBlog];
-  setBokmarks(newBookmarks);
-  }
+  const hamdaleAddBookmarks = (impoBlog) => {
+    const newBookmarks = [...bookmarks, impoBlog];
+    setBokmarks(newBookmarks);
+  };
+
+  const handleMarkReadTime = (time) => {
+    setReadTime(readTime + time);
+  };
 
   return (
     <>
@@ -20,9 +24,11 @@ function App() {
 
       <Header></Header>
       <div className="md:flex gap-3 w-11/12 mx-auto mt-5">
-        <Blogs hamdaleAddBookmarks={hamdaleAddBookmarks} ></Blogs>
-        <Bookmarks bookmarks={bookmarks}></Bookmarks>
-        {/* <Blog></Blog> */}
+        <Blogs
+          hamdaleAddBookmarks={hamdaleAddBookmarks}
+          handleMarkReadTime={handleMarkReadTime}
+        ></Blogs>
+        <Bookmarks bookmarks={bookmarks} readTime={readTime}></Bookmarks>
       </div>
     </>
   );

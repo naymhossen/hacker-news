@@ -1,6 +1,6 @@
 import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({ myBlog, hamdaleAddBookmarks }) => {
+const Blog = ({ myBlog, hamdaleAddBookmarks, handleMarkReadTime }) => {
   const {
     title,
     cover,
@@ -35,12 +35,12 @@ const Blog = ({ myBlog, hamdaleAddBookmarks }) => {
       <h1 className="text-3xl font-bold">{title}</h1>
       <p>
         {hashtags.map((has, idx) => (
-          <span key={idx}>
+          <span className="hover:text-red-600" key={idx}>
             <a href=""> #{hashtags}</a>
           </span>
         ))}
       </p>
-      <button className="underline text-2xl font-semibold text-red-600">
+      <button onClick={ () => handleMarkReadTime(reading_time)} className="underline text-2xl font-semibold text-red-600">
         Mark As Read
       </button>
     </div>
