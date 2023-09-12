@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import Blog from "../Blog/Blog";
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";

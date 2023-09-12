@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import Bookmark from "../Bookmark/Bookmark";
 
@@ -11,14 +12,14 @@ const Bookmarks = ({ bookmarks, readTime }) => {
         Bookmarked Blogs: {bookmarks.length}
       </h2>
       {
-        bookmarks.map( bookmark => <Bookmark key={bookmark.id} bookmark={bookmark}></Bookmark>)
+        bookmarks.map( (bookmark, idx) => <Bookmark key={idx} bookmark={bookmark}></Bookmark>)
       }
     </div>
   );
 };
 
-Bookmarks.PropTypes = {
-  bookmarks: PropTypes.array,
+Bookmarks.propTypes = {
+  bookmarks: PropTypes.array
 };
 
 export default Bookmarks;

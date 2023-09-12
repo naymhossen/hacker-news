@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaBookmark } from "react-icons/fa";
 
 const Blog = ({ myBlog, hamdaleAddBookmarks, handleMarkReadTime }) => {
@@ -8,7 +9,7 @@ const Blog = ({ myBlog, hamdaleAddBookmarks, handleMarkReadTime }) => {
     author,
     posted_date,
     reading_time,
-    hashtags,
+    hashtags, id
   } = myBlog;
   return (
     <div className="pt-5 space-y-5">
@@ -40,7 +41,7 @@ const Blog = ({ myBlog, hamdaleAddBookmarks, handleMarkReadTime }) => {
           </span>
         ))}
       </p>
-      <button onClick={ () => handleMarkReadTime(reading_time)} className="underline text-2xl font-semibold text-red-600">
+      <button onClick={ () => handleMarkReadTime(id, reading_time)} className="underline text-2xl font-semibold text-red-600">
         Mark As Read
       </button>
     </div>
