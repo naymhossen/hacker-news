@@ -1,6 +1,6 @@
 import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({ myBlog }) => {
+const Blog = ({ myBlog, hamdaleAddBookmarks }) => {
   const {
     title,
     cover,
@@ -24,7 +24,10 @@ const Blog = ({ myBlog }) => {
         </div>
         <div className="flex justify-center gap-3 mr-10 text-2xl">
           <h4 className="">{reading_time} min read</h4>
-          <button className="text-red-700">
+          <button
+            onClick={() => hamdaleAddBookmarks(myBlog)}
+            className="text-red-700"
+          >
             <FaBookmark></FaBookmark>
           </button>
         </div>
